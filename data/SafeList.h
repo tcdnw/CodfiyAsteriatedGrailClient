@@ -9,7 +9,7 @@ public:
     inline SafeList(){}
     inline ~SafeList(){}
     const T &at(int i) const{
-        if(i < 0 || i >= size())
+        if(i < 0 || i >= this->size())
             throw 22;
         return QList<T>::at(i);
     }

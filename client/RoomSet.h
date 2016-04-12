@@ -8,7 +8,7 @@ namespace Ui {
 class RoomSet;
 }
 
-enum ACCOUNT_STATUS;
+enum ACCOUNT_STATUS: unsigned short;
 class RoomSet : public QDialog
 {
     Q_OBJECT

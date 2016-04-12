@@ -14,6 +14,14 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     a.setFont(QFont("simsun", 9));
+    QDir dir(QCoreApplication::applicationDirPath());
+    if (dir.dirName() == "MacOS")
+    {
+        dir.cdUp();
+        dir.cdUp();
+        dir.cdUp();
+        QDir::setCurrent(dir.absolutePath());
+    }
     dataInterface = new DataInterface;
     logic = new Logic;
     animation = new Animation;

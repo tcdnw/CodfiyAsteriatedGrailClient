@@ -6,8 +6,8 @@ TEMPLATE = app
 TARGET = gui
 INCLUDEPATH += . widget data client logic
 QT += network widgets multimedia
-INCLUDEPATH += include
-LIBS += lib/libprotobuf.lib
+INCLUDEPATH += $$PWD/include
+LIBS += $$PWD/lib/libprotobuf.a
 
 # Input
 HEADERS += client/Client.h \
@@ -74,47 +74,7 @@ HEADERS += client/Client.h \
            widget/ShowArea.h \
            widget/TeamArea.h \
            widget/TipArea.h \
-           include/google/protobuf/descriptor.h \
-           include/google/protobuf/descriptor.pb.h \
-           include/google/protobuf/descriptor_database.h \
-           include/google/protobuf/dynamic_message.h \
-           include/google/protobuf/extension_set.h \
-           include/google/protobuf/generated_enum_reflection.h \
-           include/google/protobuf/generated_message_reflection.h \
-           include/google/protobuf/generated_message_util.h \
-           include/google/protobuf/message.h \
-           include/google/protobuf/message_lite.h \
-           include/google/protobuf/reflection_ops.h \
-           include/google/protobuf/repeated_field.h \
-           include/google/protobuf/service.h \
-           include/google/protobuf/text_format.h \
-           include/google/protobuf/unknown_field_set.h \
-           include/google/protobuf/wire_format.h \
-           include/google/protobuf/wire_format_lite.h \
-           include/google/protobuf/wire_format_lite_inl.h \
-           include/google/protobuf/compiler/code_generator.h \
-           include/google/protobuf/compiler/command_line_interface.h \
-           include/google/protobuf/compiler/importer.h \
-           include/google/protobuf/compiler/parser.h \
-           include/google/protobuf/compiler/plugin.h \
-           include/google/protobuf/io/coded_stream.h \
-           include/google/protobuf/io/gzip_stream.h \
-           include/google/protobuf/io/printer.h \
-           include/google/protobuf/io/tokenizer.h \
-           include/google/protobuf/io/zero_copy_stream.h \
-           include/google/protobuf/io/zero_copy_stream_impl.h \
-           include/google/protobuf/io/zero_copy_stream_impl_lite.h \
-           include/google/protobuf/stubs/atomicops.h \
-           include/google/protobuf/stubs/atomicops_internals_x86_msvc.h \
-           include/google/protobuf/stubs/common.h \
-           include/google/protobuf/stubs/once.h \
-           include/google/protobuf/stubs/platform_macros.h \
-           include/google/protobuf/stubs/template_util.h \
-           include/google/protobuf/stubs/type_traits.h \
-           include/google/protobuf/compiler/cpp/cpp_generator.h \
-           include/google/protobuf/compiler/java/java_generator.h \
-           include/google/protobuf/compiler/python/python_generator.h \
-    widget/Timelinebar.h
+           widget/Timelinebar.h
 FORMS += client/ClientUI.ui client/Lobby.ui client/RoomSet.ui
 SOURCES += main.cpp \
            client/Client.cpp \

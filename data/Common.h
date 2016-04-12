@@ -2,9 +2,9 @@
 #define COMMON_H
 #include <QString>
 #include "protocol/action_respond.pb.h"
-#define VERSION 151223
+#define VERSION 160327
 
-enum ACCOUNT_STATUS{
+enum ACCOUNT_STATUS:unsigned short{
     STATUS_NORMAL = 0,
     STATUS_LOGIN_FAILED = 1,
     STATUS_FORBIDDEN = 2,

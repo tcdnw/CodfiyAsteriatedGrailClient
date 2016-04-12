@@ -5,7 +5,7 @@
 #include <client/Client.h>
 #include <client/Lobby.h>
 
-enum ACCOUNT_STATUS;
+enum ACCOUNT_STATUS:unsigned short;
 class Role;
 class Logic : public QObject
 {
