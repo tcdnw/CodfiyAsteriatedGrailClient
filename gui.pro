@@ -8,6 +8,7 @@ INCLUDEPATH += . widget data client logic
 QT += network widgets multimedia
 INCLUDEPATH += $$PWD/include
 LIBS += $$PWD/lib/libprotobuf.a
+ICON = $$PWD/resource/rular.icns
 
 # Input
 HEADERS += client/Client.h \
