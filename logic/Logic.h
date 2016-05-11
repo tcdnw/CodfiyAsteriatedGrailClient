@@ -20,6 +20,7 @@ public:
         this->socket = socket;
         makeConnection();
     }
+
     void setLobby(Lobby* l) { lobby = l; }
     void setMyRole(int roleID=0);
     void onError(int error);
@@ -29,7 +30,9 @@ public:
     Client* getClient(){return socket;}
     ACCOUNT_STATUS getIdentity() const;
     void setIdentity(const ACCOUNT_STATUS &value);
-
+    void muteUser(int userId);
+    void unmuteUser(int userId);
+    bool isMuted(int userId);
 signals:
     void sendCommand(unsigned short proto_type, google::protobuf::Message* proto);
 public slots:
@@ -42,7 +45,6 @@ private:
     Client* socket;
     Lobby* lobby;
     ACCOUNT_STATUS identity;
-    int count;
     int state;    
     int myID;
     bool hasShownRole;
@@ -52,6 +54,7 @@ private:
     bool init_after_start;
     int roles[8];
     QMutex mutex;
+    QSet<int> muteList;
 };
 extern Logic* logic;
 #endif // LOGIC_H
