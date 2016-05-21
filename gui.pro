@@ -6,10 +6,17 @@ TEMPLATE = app
 TARGET = gui
 INCLUDEPATH += . widget data client logic
 QT += network widgets multimedia
+# use different libprotobuf for win & mac
+win32 {
+INCLUDEPATH += include
+LIBS += lib/libprotobuf.lib
+}
+macx {
 INCLUDEPATH += $$PWD/include
 LIBS += $$PWD/lib/libprotobuf.a
+# mac icons are provided in .icns
 ICON = $$PWD/resource/rular.icns
-
+}
 # Input
 HEADERS += client/Client.h \
            client/ClientUI.h \
